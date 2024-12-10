@@ -1,0 +1,7 @@
+transformers
+speechbrain
+Cython
+packaging
+huggingsound
+nemo_toolkit['all']
+pyctcdecode

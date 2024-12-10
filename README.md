@@ -5,7 +5,7 @@ This repository contains the evaluation code for the Open Universal Arabic ASR L
 # Requirements
 
 We collected models from different toolkits, such as HuggingFace, SpeechBrain, Nvidia-NeMo, etc. Requirements for each library can be installed to evaluate a desired model. To intall all the dependencies, run:
-bash```
+```bash
 pip install -r requirements/requirements.txt
 ```
 
