@@ -1,6 +1,6 @@
 # Open Universal Arabic ASR Leaderboard
 
-This repository contains the evaluation code for the Open Universal Arabic ASR Leaderboard, which is a continuous benchmark project for open-source multi-dialectal Arabic ASR models across various multi-dialectal datasets. The leaderboard is hosted at [elmresearchcenter/open_universal_arabic_asr_leaderboard](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard). For more detailed analysis such as models' robustness, speaker adaption, model efficiency and memory usage, please check our [paper]().
+This repository contains the evaluation code for the Open Universal Arabic ASR Leaderboard, a continuous benchmark project for open-source multi-dialectal Arabic ASR models across various multi-dialectal datasets. The leaderboard is hosted at [elmresearchcenter/open_universal_arabic_asr_leaderboard](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard). For more detailed analysis such as models' robustness, speaker adaption, model efficiency and memory usage, please check our [paper](https://arxiv.org/pdf/2412.13788).
 
 # Datasets
 
@@ -23,9 +23,10 @@ pip install -r requirements.txt
 
 # Evaluate a model
 
-1. Go to `models/`, run the corresponding model inference function, which will generate an output manifest file.
+We provide easy-to-use inference functions, to run an ASR model:
+1. Go to `models/`, and run the corresponding model inference function to generate an output manifest file containing ground-truths and predictions.
 2. Run the `calculate_wer` function in `eval.py` on the output manifest file.
-3. Details can be found in methods' docstrings.
+3. Details can be found in the methods' docstrings.
 
 # Add a new model
 
@@ -33,10 +34,15 @@ Please run the above evaluation for all the 5 test sets under `datasets/`, calcu
 
 We welcome models that:
 1. with a model architecture that is not present in the leaderboard.
-2. avoid using training sets in the same dataset as the test sets to avoid in-domain issue.
+2. avoid using training sets in the same dataset as the test sets to avoid the in-domain issue.
 
 # Citation 
 
 ```bibtex
-to be added
+@article{wang2024open,
+  title={Open Universal Arabic ASR Leaderboard},
+  author={Wang, Yingzhi and Alhmoud, Anas and Alqurishi, Muhammad},
+  journal={arXiv preprint arXiv:2412.13788},
+  year={2024}
+}
 ```
