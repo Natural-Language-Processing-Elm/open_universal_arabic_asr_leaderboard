@@ -23,7 +23,7 @@ Please first download the following test sets
 
 # Requirements
 
-We collected models from different toolkits, such as HuggingFace, SpeechBrain, Nvidia-NeMo, etc. Requirements for each library can be installed to evaluate a desired model. To intall all the dependencies, run:
+We collected models from different toolkits, such as HuggingFace, SpeechBrain, Nvidia-NeMo, etc. Requirements for each library can be installed to evaluate a desired model. To install all the dependencies, run:
 ```bash
 pip install -r requirements.txt
 ```
@@ -31,13 +31,13 @@ pip install -r requirements.txt
 # Evaluate a model
 
 We provide easy-to-use inference functions, to run an ASR model:
-1. Go to `models/`, and run the corresponding model inference function to generate an output manifest file containing ground-truths and predictions.
-2. Run the `calculate_wer` function in `eval.py` on the output manifest file.
+1. Go under `models/`, run the corresponding model inference function to generate an output manifest file containing ground-truths and predictions.
+2. Run `calculate_wer` function in `eval.py` on the output manifest file.
 3. Details can be found in the methods' docstrings.
 
 # Add a new model
 
-Please run the above evaluation for all the 5 test sets under `datasets/`, calculate the average WER/CER, then launch an issue or PR letting us know about your model, training data, and its performance.
+Please run the above evaluation for all the test sets under `datasets/`, calculate the average WER/CER, then launch an issue or PR letting us know about your model, training data, and its performance.
 
 We welcome models that:
 1. with a model architecture that is not present in the leaderboard.
