@@ -2,6 +2,12 @@
 
 This repository contains the evaluation code for the Open Universal Arabic ASR Leaderboard, a continuous benchmark project for open-source multi-dialectal Arabic ASR models across various multi-dialectal datasets. The leaderboard is hosted at [elmresearchcenter/open_universal_arabic_asr_leaderboard](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard). For more detailed analysis such as models' robustness, speaker adaption, model efficiency and memory usage, please check our [paper](https://arxiv.org/pdf/2412.13788).
 
+# Updates
+
+- [2025/01/11]: New model included: [Nvidia Parakeet-CTC-XXL-1.1B-Universal](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/parakeet-ctc-riva-1-1b-unified-ml-cs-universal)
+- [2025/01/11]: New model included: [Nvidia Parakeet-CTC-XXL-1.1B-Concat](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/parakeet-ctc-riva-1-1b-unified-ml-cs-concat)
+- [2023/01/11]: New dataset included: [Casablanca](https://huggingface.co/datasets/UBC-NLP/Casablanca)
+
 # Datasets
 
 Please first download the following test sets
@@ -13,6 +19,7 @@ Please first download the following test sets
 | [MASC (Clean-Test)](https://ieee-dataport.org/open-access/masc-massive-arabic-speech-corpus)    | 7              | 10.5        |
 | [MASC (Noisy-Test)](https://ieee-dataport.org/open-access/masc-massive-arabic-speech-corpus)    | 8              | 14.9        |
 | [MGB-2](http://www.mgb-challenge.org/MGB-2.html)                                                | Unspecified    | 9.6         |
+| [Casablanca](https://huggingface.co/datasets/UBC-NLP/Casablanca)                                | 8              | 7.7         |
 
 # Requirements
 
