@@ -3,10 +3,12 @@
 This repository contains the evaluation code for the Open Universal Arabic ASR Leaderboard, a continuous benchmark project for open-source multi-dialectal Arabic ASR models across various multi-dialectal datasets. The leaderboard is hosted at [elmresearchcenter/open_universal_arabic_asr_leaderboard](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard). For more detailed analysis such as models' robustness, speaker adaption, model efficiency and memory usage, please check our [paper](https://arxiv.org/pdf/2412.13788).
 
 # Updates
-
+- [2025/09/30]: New model included: [Qwen/Qwen3-Omni-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct)
+- [2025/09/22]: New model included: [mistralai/Voxtral-Small-24B-2507](https://huggingface.co/mistralai/Voxtral-Small-24B-2507)
+- [2025/09/22]: New model included: [mistralai/Voxtral-Mini-3B-2507](https://huggingface.co/mistralai/Voxtral-Mini-3B-2507)
 - [2025/01/11]: New model included: [Nvidia Parakeet-CTC-XXL-1.1B-Universal](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/parakeet-ctc-riva-1-1b-unified-ml-cs-universal)
 - [2025/01/11]: New model included: [Nvidia Parakeet-CTC-XXL-1.1B-Concat](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/models/parakeet-ctc-riva-1-1b-unified-ml-cs-concat)
-- [2023/01/11]: New dataset included: [Casablanca](https://huggingface.co/datasets/UBC-NLP/Casablanca)
+- [2025/01/11]: New dataset included: [Casablanca](https://huggingface.co/datasets/UBC-NLP/Casablanca)
 
 # Datasets
 
