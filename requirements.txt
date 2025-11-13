@@ -6,3 +6,4 @@ huggingsound
 nemo_toolkit['all']
 pyctcdecode
 qwen-omni-utils
+omnilingual-asr
