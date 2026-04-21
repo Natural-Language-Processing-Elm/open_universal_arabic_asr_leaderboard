@@ -3,6 +3,9 @@
 This repository contains the evaluation code for the Open Universal Arabic ASR Leaderboard, a continuous benchmark project for open-source multi-dialectal Arabic ASR models across various multi-dialectal datasets. The leaderboard is hosted at [elmresearchcenter/open_universal_arabic_asr_leaderboard](https://huggingface.co/spaces/elmresearchcenter/open_universal_arabic_asr_leaderboard). For more detailed analysis such as models' robustness, speaker adaption, model efficiency and memory usage, please check our [paper](https://arxiv.org/pdf/2412.13788).
 
 # Updates
+- [2026/04/21]: New model included: [google/gemma-4-E4B-it](https://huggingface.co/google/gemma-4-E4B-it)
+- [2026/04/21]: New model included: [google/gemma-4-E2B-it](https://huggingface.co/google/gemma-4-E2B-it)
+- [2026/04/16]: New model included: [cohere-transcribe-03-2026](https://huggingface.co/CohereLabs/cohere-transcribe-03-2026)
 - [2026/01/30]: New model included: [Qwen3-ASR-0.6B](https://huggingface.co/Qwen/Qwen3-ASR-0.6B)
 - [2026/01/30]: New model included: [Qwen3-ASR-1.7B](https://huggingface.co/Qwen/Qwen3-ASR-1.7B)
 - [2026/01/30]: New model included: [VibeVoice-ASR-7B](https://huggingface.co/microsoft/VibeVoice-ASR)
