@@ -44,7 +44,11 @@ def normalize_arabic_text(text):
     for eastern, western in eastern_to_western_numerals.items():
         text = text.replace(eastern, western)
 
-    return text.strip()
+    # Attach the conjunction و to the following word
+    text = re.sub(r'(^|\s)و\s+', r'\1و', text)
+    # Normalize whitespace
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
 
 
 def calculate_wer(output_manifest):
