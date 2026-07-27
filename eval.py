@@ -20,7 +20,7 @@ def normalize_arabic_text(text):
     normalized text
     """
     # Remove punctuation
-    punctuation = r'[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~،؛؟]'
+    punctuation = r'[!"#$%&\'()*+,\-./:;<=>?@\[\\\]^_`{|}~،؛؟]'
     text = re.sub(punctuation, '', text)
 
     # Remove diacritics
