@@ -51,6 +51,11 @@ def normalize_arabic_text(text):
     return text
 
 
+# Annotator tags marking untranscribable speech (e.g. in SADA references).
+# Utterances whose reference contains one of these are excluded from scoring.
+UNCLEAR_TAGS = ("غير واضح", "غيرواضح")
+
+
 def calculate_wer(output_manifest):
     """
     Arguments
@@ -64,11 +69,17 @@ def calculate_wer(output_manifest):
     """
     predictions = []
     target_transcripts = []
+    skipped = 0
     with open(output_manifest, "r") as f:
         for line in tqdm(f):
             item = json.loads(line)
+            if any(tag in item['text'] for tag in UNCLEAR_TAGS):
+                skipped += 1
+                continue
             target_transcripts.append(normalize_arabic_text(item['text']))
             predictions.append(normalize_arabic_text(item['pred_text']))
+    if skipped:
+        print("skipped", skipped, "utterances with unclear-tagged references")
     wer = word_error_rate(predictions, target_transcripts)
     print("wer : ", wer)
     cer = word_error_rate(predictions, target_transcripts, use_cer=True)
