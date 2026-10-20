@@ -74,3 +74,49 @@ def calculate_wer(output_manifest):
     cer = word_error_rate(predictions, target_transcripts, use_cer=True)
     print("cer : ", cer)
     return wer, cer
+
+
+def calculate_wer_per_dialect(output_manifest, data_manifest):
+    """
+    Compute WER/CER per dialect for test sets whose data manifest carries
+    a "dialect" field per sample (e.g. datasets/casablanca_test.json).
+    The output manifest is joined to the data manifest by audio file name.
+
+    Arguments
+    ---------
+    output_manifest: str
+        path to the output manifest of the model inference
+    data_manifest: str
+        path to the data manifest under datasets/ with dialect labels
+
+    Output
+    ---------
+    dict mapping each dialect to its {"wer": ..., "cer": ...}
+    """
+    dialect_labels = {}
+    with open(data_manifest, "r") as f:
+        for line in f:
+            item = json.loads(line)
+            if "dialect" in item:
+                file_name = item['audio_filepath'].split("/")[-1]
+                dialect_labels[file_name] = item["dialect"]
+
+    predictions = {}
+    target_transcripts = {}
+    with open(output_manifest, "r") as f:
+        for line in tqdm(f):
+            item = json.loads(line)
+            file_name = item['audio_filepath'].split("/")[-1]
+            dialect = dialect_labels.get(file_name)
+            if dialect is None:
+                continue
+            target_transcripts.setdefault(dialect, []).append(normalize_arabic_text(item['text']))
+            predictions.setdefault(dialect, []).append(normalize_arabic_text(item['pred_text']))
+
+    results = {}
+    for dialect in sorted(predictions):
+        wer = word_error_rate(predictions[dialect], target_transcripts[dialect])
+        cer = word_error_rate(predictions[dialect], target_transcripts[dialect], use_cer=True)
+        print(dialect, "({} samples)".format(len(predictions[dialect])), "wer : ", wer, "cer : ", cer)
+        results[dialect] = {"wer": wer, "cer": cer}
+    return results
