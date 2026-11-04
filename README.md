@@ -42,7 +42,8 @@ pip install -r requirements.txt
 We provide easy-to-use inference functions, to run an ASR model:
 1. Go under `models/`, run the corresponding model inference function to generate an output manifest file containing ground-truths and predictions.
 2. Run `calculate_wer` function in `eval.py` on the output manifest file.
-3. Details can be found in the methods' docstrings.
+3. For test sets whose data manifest carries per-sample dialect labels (currently Casablanca), run `calculate_wer_per_dialect` in `eval.py` to additionally get WER/CER for each dialect.
+4. Details can be found in the methods' docstrings.
 
 # Add a new model
 
